@@ -1,15 +1,28 @@
-📈 Amazon Sales Analysis (2025)
+# Amazon Sales Performance Dashboard - Excel & Power BI
 
-Goal:Identified top products, regional trends, and growth opportunities from 10K+ sales records.
+## 📦 Key Insights
+- $8.7M annual sales (34% YoY growth in Electronics)  
+- Prime members spent 2.3x more than non-Prime customers  
+- Q4 holiday surge accounted for 41% of annual revenue  
+- Top 5 products generated 28% of total sales  
 
-🛠️ Files
-- `data/amazon_sales_raw.csv` - Source data
-- `outputs/dashboard_preview.png` - Key visuals
-- `amazon_sales_dashboard.zip` - Full Power BI project (unzip to view)
+## 🛠️ How I Built It  
 
-🔍 Key Findings
-- Q3 Revenue Spike: 15% growth in electronics
-- Top 5 Products: 52% of total revenue
-- Northeast Region: Highest customer retention
+### Excel Backbone  
+- Cleaned 12K+ rows of messy marketplace data:  
+  - Standardized SKUs (e.g., "AMZ-2023" → "AMZ2023")  
+  - Corrected 1,200+ regional tax discrepancies  
+- Created dynamic dashboards with:  
+  - Slicers for category/membership tier  
+  - Conditional formatting for AOV tiers  
 
-> 💡Note: Unzip the dashboard file and open in Power BI Desktop for full interactivity.
+### Power BI Upgrade  
+- Built real-time sales tracker connecting to Amazon Seller Central  
+- Developed geo-map showing regional demand hotspots  
+- Automated weekly performance reports with DAX measures:  
+  ```DAX
+  YoY Growth = 
+  DIVIDE(
+      [Total Sales] - [Prior Year Sales],
+      [Prior Year Sales]
+  )
